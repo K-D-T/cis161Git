@@ -33,4 +33,7 @@ int main(){
 	
 	//output the value for area
 	cout << "The area is " << area << "." << endl;
+
+	//close out the program, doesn't need it for this assignments
+	return 0;
 }
