@@ -50,11 +50,21 @@ int main(){
 		while(iSS >> placehold){
 			//This specific line ensures that we go inside the loop and push info to outsteam
 			validLine = 1;
-			//First item should be name 
+			//First item should be name, program ends if name includes a number.
 			if(namePresent == 0){
+				i = 0;
+				while(i < placehold.length()){
+					if(!isalpha(placehold.at(i))){
+						cout << "Number found where name is located. Program exited." << endl;
+						return 1;
+					}
+					i++;
+				}
 				namePresent = 1;
 				name = placehold;
+				i = 0;
 			}
+
 			//If name is present, parse the info to find out if it's an Int or double and convert it 
 			else if(namePresent = 1){
 				i = 0;
