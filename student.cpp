@@ -5,6 +5,8 @@
 
 using namespace std;
 
+//Class for student to control the object
+//includes private variables, mutators, and accessors
 class Student{
 	private:
 		string fName;
@@ -27,6 +29,7 @@ class Student{
 		void setGrade(double grade);
 };
 
+//Allows the last name to be set outside of the constructor
 void Student::setLast(string last){
 	if(last == ""){
 		cout << "Please provide a name." << endl;
@@ -35,6 +38,7 @@ void Student::setLast(string last){
 	}	
 }
 
+//Alloes the first name to be set outside of the constructor
 void Student::setFirst(string first){
 	if(first == ""){
 		cout << "Please provide a name." << endl;
@@ -43,6 +47,7 @@ void Student::setFirst(string first){
 	}
 }
 
+// Allows the grade to be set outside of the constructor
 void Student::setGrade(double grade_){
 	if(grade_ < 0){
 		cout << "You need to enter a value greater than 0." << endl;
@@ -51,6 +56,7 @@ void Student::setGrade(double grade_){
 	}
 }
 
+//Controls the user input, the one thing i can't change was ensuring values are over 0; so they're set to zero, while displaying a message.
 void userInput(vector<Student>& c, Student s){
 	string sentinel;
 	string f;
@@ -99,12 +105,14 @@ void userInput(vector<Student>& c, Student s){
 
 }
 
+//print function that iterates through the vector
 void print(vector<Student>& v){
 	for(auto & it : v){
 	 	cout << fixed << setprecision(2) << it.getFirst() << " " << it.getLast() << ",  Grade: " << it.getGrade() << endl;   
 	}
 }
 
+//main function to run the program
 int main(){
 	vector<Student> currentStudents;
 	Student s; 
